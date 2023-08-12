@@ -10,7 +10,7 @@ def push_log (log_group,log_stream,content):
         'message': content
     }
     # Put the log event to the log stream
-    print(f"Push Log to {log_group}")
+    #print(f"Push Log to {log_group}")
     response = cloudwatch_logs.put_log_events(
         logGroupName=log_group,
         logStreamName=log_stream,
@@ -25,7 +25,7 @@ def check_logstream_exsited (log_group):
     )
     #print(logstream_name['logStreams'][0]['logStreamName'])
     filtered_logstream_name = logstream_name['logStreams'][0]['logStreamName']
-    #print (f"Latest logstream from console: {filtered_old_logstream_name}")
+    #print (f"Latest logstream from console: {filtered_logstream_name}")
     return filtered_logstream_name
 
 def create_new_logstream (log_group,logstream):
